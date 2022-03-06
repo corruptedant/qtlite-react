@@ -1,0 +1,24 @@
+{
+    "name": "quicktrack-lite-react",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "runserver": "python3 backend/manage.py runserver --settings qtlite.settings.base 5000"
+    },
+    "dependencies": {
+        "@heroicons/react": "^1.0.6",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^6.2.2"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^1.0.7",
+        "autoprefixer": "^10.4.2",
+        "postcss": "^8.4.7",
+        "tailwindcss": "^3.0.23",
+        "vite": "^2.8.0"
+    }
+}
