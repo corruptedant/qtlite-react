@@ -6,7 +6,7 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "runserver": "python3 backend/manage.py runserver --settings qtlite.settings.base 5000"
+        "runserver": "python3 backend/manage.py runserver --settings qtlite.settings.development 5000"
     },
     "dependencies": {
         "@heroicons/react": "^1.0.6",
