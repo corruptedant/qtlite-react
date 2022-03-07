@@ -13,7 +13,7 @@ class Account(models.Model):
 class Debit(models.Model):
     date = models.DateField()
     value = models.DecimalField(max_digits=14, decimal_places=4)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, related_name='debits', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -22,7 +22,7 @@ class Debit(models.Model):
 class Credit(models.Model):
     date = models.DateField()
     value = models.DecimalField(max_digits=14, decimal_places=4)
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, related_name='credits', on_delete=models.CASCADE)
     date_created = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
