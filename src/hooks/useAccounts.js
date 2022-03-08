@@ -1,27 +1,21 @@
-import React, { useReducer, useEffect } from 'react'
-
-function reducer(state, action) {
-    switch (action.type) {
-        case 'addAccount':
-            return [action.payload, ...state]
-        case 'setAccount':
-            return [action.payload]
-        default:
-            throw new Error()
-    }
-}
+import { useContext, useEffect } from 'react'
+import { AccountContext } from '../contexts/accounts'
 
 export function useAccounts() {
-    const [accounts, dispatch] = useReducer(reducer, null)
-    async function getAccounts() {
-        await fetch('/api/accounts')
+    const [state, dispatch] = useContext(AccountContext)
+
+    const fetchAccounts = async () => {
+        await fetch(`/api/v1/accounts`)
             .then((res) => res.json())
-            .then((data) => data.value)
+            .then((data) => {
+                dispatch({ type: 'setAccounts', payload: data })
+            })
     }
 
+    // fetches accounts if not initialized.
     useEffect(() => {
-        if (accounts === null)
-            dispatch({ type: 'setAccount', payload: getAccounts() })
+        if (state.accounts === null) {
+            fetchAccounts()
+        }
     })
-    return [accounts, dispatch]
 }
