@@ -5,12 +5,14 @@ from .models import (Account, Debit, Credit)
 # Register your models here.
 
 class DebitInline(admin.TabularInline):
-    fields = ['date', 'description', 'value']
+    fields = ['date', 'description', 'debit']
     model = Debit
     extra = 3
 
-class CreditInline(DebitInline):
+class CreditInline(admin.TabularInline):
+    fields = ['date', 'description', 'credit' ]
     model = Credit
+    extra = 3
 
 @admin.register(Account)
 class AccountAdmin(admin.ModelAdmin):
@@ -19,14 +21,14 @@ class AccountAdmin(admin.ModelAdmin):
 
 @admin.register(Debit)
 class DebitAdmin(admin.ModelAdmin):
-    list_display = ['id', 'account_name','value']
+    list_display = ['id', 'account_name','debit']
 
     def account_name(self, obj):
         return obj.account.name
 
 @admin.register(Credit)
 class CreditAdmin(admin.ModelAdmin):
-    list_display = ['id', 'account_name','value']
+    list_display = ['id', 'account_name','credit']
 
     def account_name(self, obj):
         return obj.account.name
