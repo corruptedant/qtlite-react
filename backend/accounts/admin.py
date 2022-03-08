@@ -5,7 +5,7 @@ from .models import (Account, Debit, Credit)
 # Register your models here.
 
 class DebitInline(admin.TabularInline):
-    fields = ['date', 'value']
+    fields = ['date', 'description', 'value']
     model = Debit
     extra = 3
 
