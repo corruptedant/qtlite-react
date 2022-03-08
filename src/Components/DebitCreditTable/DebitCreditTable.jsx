@@ -1,6 +1,29 @@
 import TableItem from './TableItem'
 
+const generateTransactionTable = function (account) {
+    // combine the list
+    const transactions = [...account.debits, ...account.credits]
+
+    // sort by date
+    transactions.sort((a, b) => new Date(a.date) - new Date(b.date))
+
+    let currAmount = 0
+    // increment or decrement depending on the transaction
+    // using map
+    const updTransactions = transactions.map((tran) => {
+        return {
+            amount: tran.credit
+                ? (currAmount -= parseFloat(tran.credit))
+                : (currAmount += parseFloat(tran.debit)),
+            ...tran,
+        }
+    })
+
+    return updTransactions
+}
+
 function DebitCreditTable({ account }) {
+    const transactions = generateTransactionTable(account)
     return (
         <table className="border-2-black">
             <thead className="border-2-black">
@@ -13,9 +36,9 @@ function DebitCreditTable({ account }) {
                 </tr>
             </thead>
             <tbody>
-                <TableItem />
-                <TableItem />
-                <TableItem />
+                {transactions.map((tran) => (
+                    <TableItem key={tran.id} transaction={tran} />
+                ))}
             </tbody>
         </table>
     )
