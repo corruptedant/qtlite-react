@@ -8,7 +8,7 @@ function App() {
     const [state, dispatch] = useContext(AccountContext)
     useEffect(() => {
         const getAccounts = async () => {
-            await fetch(`/api/accounts`)
+            await fetch(`/api/v1/accounts`)
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data)
