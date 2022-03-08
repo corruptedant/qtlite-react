@@ -1,6 +1,5 @@
 import Navbar from '../Components/Navbar'
 import { useParams } from 'react-router-dom'
-import { useAccounts } from '../hooks/useAccounts'
 import { useEffect, useContext } from 'react'
 import { AccountContext } from '../contexts/accounts'
 import DebitCreditTable from '../Components/DebitCreditTable/DebitCreditTable'
@@ -10,7 +9,7 @@ function AccountDetail() {
     const [state, dispatch] = useContext(AccountContext)
     useEffect(() => {
         const getAccounts = async () => {
-            await fetch(`/api/accounts`)
+            await fetch(`/api/v1/accounts`)
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data)
