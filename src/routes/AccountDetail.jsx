@@ -32,9 +32,11 @@ function AccountDetail() {
                     <h2 className="text-2xl">Loading...</h2>
                 ) : (
                     <>
-                        <h2 className="text-6xl">{currentAccount.username}</h2>
-                        <h3 className="text-3xl">RM {currentAccount.hutang}</h3>
-                        <DebitCreditTable />
+                        <h2 className="text-6xl">{currentAccount.name}</h2>
+                        <h3 className="text-3xl pt-3">
+                            RM {currentAccount.amount}
+                        </h3>
+                        <DebitCreditTable account={currentAccount} />
                     </>
                 )}
             </div>
