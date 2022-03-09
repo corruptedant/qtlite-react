@@ -8,12 +8,17 @@ export const AuthProvider = ({ children }) => {
 
     const fetchUser = async () => {
         const response = await (await fetch(`/api/v1/user/me`)).json()
+        console.log(response)
+        setUser(response.username)
+        setCsrfToken(response.csrftoken)
+    }
 
-        // if user is initialized
-        if (response.username !== '') {
-            setUser(response.username)
+    const getConfig = () => {
+        return {
+            headers: {
+                'X-CSRFToken': csrfToken,
+            },
         }
-        setCsrfToken(response.csrfToken)
     }
 
     const signIn = async (username, password, callback) => {
@@ -41,6 +46,6 @@ export const AuthProvider = ({ children }) => {
         callback()
     }
 
-    const value = { user, csrfToken, fetchUser, signIn, signOut }
+    const value = { user, csrfToken, getConfig, fetchUser, signIn, signOut }
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

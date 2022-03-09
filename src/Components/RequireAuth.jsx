@@ -1,4 +1,5 @@
 import { useLocation, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 import { useAuth } from '../hooks/useAuth'
 
@@ -6,9 +7,11 @@ function RequireAuth({ children }) {
     const auth = useAuth()
     const location = useLocation()
 
-    if (typeof auth.user === null) {
-        Promise.all([auth.fetchUser()])
-    }
+    useEffect(() => {
+        if (auth.user === null) {
+            auth.fetchUser()
+        }
+    })
 
     if (auth.user === '') {
         // Redirect them to the /login page, but save the current location they were
