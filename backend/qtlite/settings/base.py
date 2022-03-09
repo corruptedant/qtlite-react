@@ -92,6 +92,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
