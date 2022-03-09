@@ -20,23 +20,24 @@ function Info() {
                     </p>
 
                     <p className="pt-5">
-                        React IMO is harder is use. Vue's reactivity is easier
-                        to grasp compared to React's immutability. Each
-                        component rerenders by calling the function again which
-                        sounds great but it's harder to wrap my head around the
-                        script setup function that Vue implements.
+                        React IMO is harder is use. Vue&apos;s reactivity is
+                        easier to grasp compared to React&apos;s immutability.
+                        Each component rerenders by calling the function again
+                        which sounds great but it&apos;s harder to wrap my head
+                        around the script setup function that Vue implements.
                     </p>
                     <p className="pt-5">
                         JSX is relatively easy to grasp but template function
                         just looks <i>easier</i>, you know? Instead of mixing
-                        Javascript with HTML I think it's better to just attach
-                        words to html tags instead.
+                        Javascript with HTML I think it&apos;s better to just
+                        attach words to html tags instead.
                     </p>
                     <p className="pt-5">
                         Things are especially hard with Global state. In Vue it
                         could be done via simple
                         <code className="px-2">const state = reactive</code>
-                        on a composable but for React it's much more hands tied.
+                        on a composable but for React it&apos;s much more hands
+                        tied.
                     </p>
                     <p className="pt-5">
                         One thing good about react is that just about everything
