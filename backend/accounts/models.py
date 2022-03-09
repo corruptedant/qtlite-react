@@ -14,8 +14,11 @@ class Account(models.Model):
         return self.name
     
     def amount(self):
-        return self.debits.all().aggregate(total_debit = Sum('debit'))['total_debit'] - self.credits.all().aggregate(total_credit = Sum('credit'))['total_credit']
-
+        # FIXME: Deal with this properly. Please ? At least check if array exists, alright?
+        try:
+            return self.debits.all().aggregate(total_debit = Sum('debit'))['total_debit'] - self.credits.all().aggregate(total_credit = Sum('credit'))['total_credit']
+        except TypeError:
+            return 0
 
 class Debit(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -26,7 +29,7 @@ class Debit(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.account} / {self.value}'
+        return f'{self.account} / {self.debit}'
 
 class Credit(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -37,4 +40,4 @@ class Credit(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f'{self.account} / {self.value}'
+        return f'{self.account} / {self.credit}'
