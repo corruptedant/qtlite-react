@@ -2,7 +2,7 @@ import quicktrack from '../Icons/quicktrack.svg'
 import { useAuth } from '../hooks/useAuth'
 import { useEffect } from 'react'
 
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Navigate, useNavigate, useLocation } from 'react-router-dom'
 
 function Login() {
     const navigate = useNavigate()
@@ -24,8 +24,17 @@ function Login() {
             navigate(from, { replace: true })
         })
     }
-    auth.fetchUser()
-    // if (auth.user) return navigate(from, { replace: true })
+
+    useEffect(() => {
+        if (auth.user === null) {
+            auth.fetchUser()
+        }
+    })
+
+    if (auth.user !== '') {
+        return <Navigate to={from} replace />
+        // navigate(from, { replace: true })
+    }
     return (
         <form
             onSubmit={handleSubmit}
