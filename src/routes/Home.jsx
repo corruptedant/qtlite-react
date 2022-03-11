@@ -4,7 +4,7 @@ import { AccountContext } from '../contexts/accounts'
 import Home from '../Components/Home'
 import Navbar from '../Components/Navbar'
 
-function App() {
+function HomeMain() {
     const [state, dispatch] = useContext(AccountContext)
     useEffect(() => {
         const getAccounts = async () => {
@@ -19,13 +19,13 @@ function App() {
             console.log({ state })
             getAccounts()
         }
-    }, [state])
+    }, [state, dispatch])
     return (
         <>
             <Navbar />
-            <Home />
+            {state.accounts && <Home />}
         </>
     )
 }
 
-export default App
+export default HomeMain
