@@ -10,7 +10,14 @@
 
 body {
     overflow: scroll;
-    @apply bg-gray-100;
+}
+
+.main-color {
+    @apply bg-gray-100 dark:bg-gray-800 text-black dark:text-slate-200;
+}
+
+.nav {
+    @apply bg-white dark:bg-gray-700 text-black dark:text-slate-200;
 }
 
 .scrollbar-hide {
