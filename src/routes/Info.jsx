@@ -5,7 +5,7 @@ function Info() {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col items-center justify-center pt-2">
+            <div className="main-color flex flex-col items-center justify-center pt-2">
                 <div className="w-96">
                     <img src={quicktrack} className="w-40 h-40" alt="" />
                     <h2 className="text-4xl">Quicktrack Lite</h2>

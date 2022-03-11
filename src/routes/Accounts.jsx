@@ -79,13 +79,13 @@ function Accounts() {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col items-center bg-gray-100">
+            <div className="main-color flex flex-col items-center bg-gray-100">
                 <div className="relative">
                     <div className="flex items-end justify-between">
                         <h1 className="text-4xl mt-2">Accounts</h1>
                         <div
                             onClick={setIsAddAccToggled}
-                            className="cursor-pointer p-1 bg-gray-100 hover:bg-gray-200 rounded-xl"
+                            className="cursor-pointer p-1 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 hover:dark:bg-gray-700 rounded-xl"
                         >
                             <UserAddIcon className="w-8 h-8" />
                         </div>

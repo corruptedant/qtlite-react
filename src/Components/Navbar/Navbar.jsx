@@ -9,9 +9,12 @@ import NavIcon from './NavIcon'
 
 import { Link } from 'react-router-dom'
 
+import { useDarkMode } from '../../hooks/useDarkMode'
+
 function Navbar() {
+    const [enabled, setEnabledState] = useDarkMode()
     return (
-        <nav className="flex px-2 justify-between shadow sticky top-0 z-50 bg-white">
+        <nav className="nav flex px-2 justify-between shadow sticky top-0 z-50 bg-white">
             <div className="inline-flex items-center flex-shrink-0 p-2">
                 <img src={quicktrack} alt="" className="h-14 w-14" />
                 {/* FIXME: Correctly centers the middle portion. */}
@@ -31,6 +34,16 @@ function Navbar() {
                 </div>
             </div>
             <div className="flex items-center">
+                <div className="flex items-center">
+                    <label htmlFor="darkmode">Enable Dark Mode</label>
+                    <input
+                        checked={enabled}
+                        onChange={() => setEnabledState(!enabled)}
+                        type="checkbox"
+                        name="darkmode"
+                        id="darkmode"
+                    />
+                </div>
                 <div className="flex items-center cursor-pointer">
                     <LogoutIcon className="w-8 h-8" />
                     <p>Logout</p>

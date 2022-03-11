@@ -27,7 +27,7 @@ function AccountDetail() {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col items-center">
+            <div className="main-color flex  flex-col items-center">
                 {currentAccount === undefined ? (
                     <h2 className="text-2xl">Loading...</h2>
                 ) : (
