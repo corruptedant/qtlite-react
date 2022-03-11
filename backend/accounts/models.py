@@ -15,10 +15,13 @@ class Account(models.Model):
     
     def amount(self):
         # FIXME: Deal with this properly. Please ? At least check if array exists, alright?
-        try:
-            return self.debits.all().aggregate(total_debit = Sum('debit'))['total_debit'] - self.credits.all().aggregate(total_credit = Sum('credit'))['total_credit']
-        except TypeError:
-            return 0
+        debits = self.debits.all().aggregate(total_debit = Sum('debit'))['total_debit']
+        credits = self.credits.all().aggregate(total_credit = Sum('credit'))['total_credit']
+        if debits is None:
+            debits = 0
+        if credits is None:
+            credits = 0
+        return debits - credits
 
 class Debit(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
