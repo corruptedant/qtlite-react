@@ -18,4 +18,6 @@ export function useAccounts() {
             fetchAccounts()
         }
     })
+
+    return [state, dispatch]
 }
