@@ -4,8 +4,7 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['corruptedant-quicktrack.herokuapp.com',
-                 'next-quicktrack.herokuapp.com', 'v3-quicktrack.herokuapp.com']
+ALLOWED_HOSTS = ['quicktrack-lite.herokuapp.com']
 
 # SSL / CSRF / CSP
 
