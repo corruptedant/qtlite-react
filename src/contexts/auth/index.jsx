@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    const signIn = async (username, password, callback) => {
+    const signIn = async (username, password, callback, callbackError) => {
         const options = {
             method: 'POST',
             headers: {
@@ -33,19 +33,30 @@ export const AuthProvider = ({ children }) => {
                 password,
             }),
         }
-        const response = await (
-            await fetch('/api/v1/user/login', options)
-        ).json()
-        setUser(response)
-        callback()
+        const response = await fetch('/api/v1/user/login', options)
+        if (response.ok) {
+            const data = response.json()
+            setUser(data)
+            setCsrfToken(data.csrftoken)
+            callback()
+        } else {
+            callbackError(response)
+        }
     }
 
     const signOut = async (callback) => {
-        const response = await (await fetch('/api/v1/user/logout')).json()
+        // const response = await (await fetch('/api/v1/user/logout')).json()
         setUser(null)
         callback()
     }
 
-    const value = { user, csrfToken, getConfig, fetchUser, signIn, signOut }
+    const value = {
+        user,
+        csrfToken,
+        getConfig,
+        fetchUser,
+        signIn,
+        signOut,
+    }
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
