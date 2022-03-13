@@ -18,7 +18,7 @@ function AddAccountForm(props) {
     return (
         <form
             onSubmit={props.handleSubmit}
-            className="flex flex-col items-center bg-gray-200 shadow-lg p-4 rounded-md mt-4"
+            className="flex flex-col items-center bg-gray-200 dark:bg-gray-600 text-white dark:text-slate-200 shadow-lg p-4 rounded-md mt-4"
         >
             <h3 className="text-2xl mr-auto">Add Account</h3>
             <div className="flex items-center mt-5">
@@ -26,7 +26,7 @@ function AddAccountForm(props) {
                     Username
                 </label>
                 <input
-                    className="rounded-md bg-gray-100 px-3 "
+                    className="rounded-md bg-gray-100 text-white dark:text-gray-800 px-3 "
                     type="text"
                     name="name"
                     id="name"
