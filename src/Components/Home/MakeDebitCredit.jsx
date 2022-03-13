@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { useToggle } from '../../hooks/useToggle'
 
 function MakeDebitCredit(props) {
-    const [isDebit, setIsDebit] = useToggle()
+    const [isDebit, setIsDebit] = useToggle(true)
 
     return (
         <form
