@@ -22,7 +22,7 @@ function Home() {
         const formData = Object.fromEntries(new FormData(e.target))
         // Grab the hidden input checkbox from the form
         // and perform a boolean operation ("on"/false is Credit, "off"/true is Debit)
-        const isDebit = e.target.querySelector('#isDebit').value !== 'on'
+        const isDebit = e.target.querySelector('#isDebit').checked
         const { account, date, desc, amount } = formData
         const data = {
             account,
