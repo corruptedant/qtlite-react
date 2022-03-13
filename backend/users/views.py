@@ -19,7 +19,12 @@ class LoginView(views.APIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         login(request, user)
-        return Response(UserSerializer(user).data)
+        serializer = UserSerializer(user)
+        data = serializer.data
+        upd_data = dict(data)
+        upd_data['csrftoken'] = get_token(request)
+        print(upd_data)
+        return Response(upd_data)
 
 @api_view(['POST'])
 @authentication_classes([SessionAuthentication])
