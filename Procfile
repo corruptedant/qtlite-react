@@ -1,0 +1,1 @@
+web: gunicorn --chdir backend qtlite.wsgi --log-file -
