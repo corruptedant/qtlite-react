@@ -1,8 +1,8 @@
-import Navbar from '../Components/Navbar'
+import Navbar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
 import { useEffect, useContext } from 'react'
 import { AccountContext } from '../contexts/accounts'
-import DebitCreditTable from '../Components/DebitCreditTable/DebitCreditTable'
+import DebitCreditTable from '../components/DebitCreditTable/DebitCreditTable'
 
 function AccountDetail() {
     let params = useParams()

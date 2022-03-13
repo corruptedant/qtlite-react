@@ -7,7 +7,7 @@ import {
     SunIcon,
 } from '@heroicons/react/outline'
 import { UsersIcon } from '@heroicons/react/solid'
-import quicktrack from '../../Icons/quicktrack.svg'
+import quicktrack from '../../icons/quicktrack.svg'
 import NavIcon from './NavIcon'
 
 import { Link, useNavigate, Navigate } from 'react-router-dom'

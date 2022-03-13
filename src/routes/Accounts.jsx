@@ -3,9 +3,9 @@ import { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 
 import { AccountContext } from '../contexts/accounts'
-import AccountsList from '../Components/AccountsList/AccountsList'
-import Navbar from '../Components/Navbar'
-import SearchBar from '../Components/SearchBar'
+import AccountsList from '../components/AccountsList/AccountsList'
+import Navbar from '../components/Navbar'
+import SearchBar from '../components/SearchBar'
 
 import { UserAddIcon } from '@heroicons/react/outline'
 

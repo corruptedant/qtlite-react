@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react'
 import { AccountContext } from '../contexts/accounts'
 
-import Home from '../Components/Home'
-import Navbar from '../Components/Navbar'
+import Home from '../components/Home'
+import Navbar from '../components/Navbar'
 
 function HomeMain() {
     const [state, dispatch] = useContext(AccountContext)

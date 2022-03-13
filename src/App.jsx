@@ -8,8 +8,8 @@ import Login from './routes/Login'
 
 import { AccountsProvider } from './contexts/accounts'
 import { AuthProvider } from './contexts/auth'
-import RequireAuth from './Components/RequireAuth'
-import ReloadPrompt from './ReloadPrompt/ReloadPrompt'
+import RequireAuth from './components/RequireAuth'
+import ReloadPrompt from './components/ReloadPrompt'
 
 function App() {
     return (
