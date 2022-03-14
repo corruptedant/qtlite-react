@@ -22,8 +22,8 @@ class AccountsList(generics.ListCreateAPIView):
 
 class DebitList(generics.CreateAPIView):
     serializer_class = DebitSerializer
-    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 class CreditList(generics.CreateAPIView):
     serializer_class = CreditSerializer
-    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated]
