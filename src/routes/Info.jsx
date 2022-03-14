@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar'
-import quicktrack from '../Icons/quicktrack.svg'
+import quicktrack from '../icons/quicktrack.svg'
 
 function Info() {
     return (

@@ -1,4 +1,4 @@
-import quicktrack from '../Icons/quicktrack.svg'
+import quicktrack from '../icons/quicktrack.svg'
 import { useAuth } from '../hooks/useAuth'
 import { useEffect, useState } from 'react'
 
