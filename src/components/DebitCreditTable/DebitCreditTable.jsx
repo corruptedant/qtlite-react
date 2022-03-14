@@ -1,5 +1,7 @@
 import TableItem from './TableItem'
 
+import { BigNumber } from 'bignumber.js'
+
 const generateTransactionTable = function (account) {
     // combine the list
     const transactions = [...account.debits, ...account.credits]
@@ -13,8 +15,12 @@ const generateTransactionTable = function (account) {
     const updTransactions = transactions.map((tran) => {
         return {
             amount: tran.credit
-                ? (currAmount -= parseFloat(tran.credit))
-                : (currAmount += parseFloat(tran.debit)),
+                ? (currAmount = new BigNumber(currAmount).minus(
+                      BigNumber(tran.credit)
+                  ))
+                : (currAmount = new BigNumber(currAmount).plus(
+                      BigNumber(tran.debit)
+                  )),
             ...tran,
         }
     })
@@ -28,11 +34,11 @@ function DebitCreditTable({ account }) {
         <table className="border-2-black">
             <thead className="border-2-black">
                 <tr>
-                    <th className="border-2-black px-6">Date</th>
-                    <th className="border-2-black px-24">Details</th>
-                    <th className="border-2-black px-6">Debit</th>
-                    <th className="border-2-black px-6">Credit</th>
-                    <th className="border-2-black px-6">Balance</th>
+                    <th className="border-2-black lg:px-6">Date</th>
+                    <th className="border-2-black lg:px-24">Details</th>
+                    <th className="border-2-black lg:px-6">Debit</th>
+                    <th className="border-2-black lg:px-6">Credit</th>
+                    <th className="border-2-black lg:px-6">Balance</th>
                 </tr>
             </thead>
             <tbody>

@@ -8,7 +8,7 @@ function TableItem({ transaction }) {
             </td>
             <td className="border-2-black p-2">{transaction.credit}</td>
             <td className="border-2-black p-2 text-center">
-                {transaction.amount}
+                {transaction.amount.toFixed(4)}
             </td>
         </tr>
     )

@@ -72,6 +72,7 @@ function MakeDebitCredit(props) {
                         type="number"
                         name="amount"
                         id="amount"
+                        step="0.0001"
                         className="rounded-sm bg-gray-100 dark:bg-gray-700 ml-2 p-1"
                         required
                     />
