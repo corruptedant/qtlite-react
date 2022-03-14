@@ -76,7 +76,7 @@ function Navbar() {
                         className="flex items-center cursor-pointer p-1 rounded-md hover:bg-gray-400 dark:hover:bg-gray-600"
                     >
                         <LogoutIcon className="w-8 h-8" />
-                        <p>Logout</p>
+                        <p className="hidden sm:block">Logout</p>
                     </button>
                 </div>
             </div>
