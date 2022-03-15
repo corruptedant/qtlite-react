@@ -51,12 +51,10 @@ function Accounts() {
             await fetch(`/api/v1/accounts`)
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data)
                     dispatch({ type: 'setAccounts', payload: data })
                 })
         }
         if (state.accounts === null) {
-            console.log({ state })
             getAccounts()
         }
     }, [state, dispatch])

@@ -31,7 +31,6 @@ function Home() {
             description: desc,
         }
         data[isDebit ? 'debit' : 'credit'] = amount
-        console.log({ data })
         const [res, err] = await destructureAxios(
             axios.post(
                 `/api/v1/${isDebit ? 'debit' : 'credit'}`,
@@ -42,7 +41,6 @@ function Home() {
         if (res) {
             const accounts = state.accounts.slice()
             const account = accounts.find((acc) => acc.id === res.data.account)
-            console.log({ account }, { accounts })
             if (isDebit) {
                 account['debits'] = [...account.debits, res.data]
                 account['amount'] = BigNumber(account['amount']).plus(

@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
 
     const fetchUser = async () => {
         const response = await (await fetch(`/api/v1/user/me`)).json()
-        console.log(response)
         setUser(response.username)
         setCsrfToken(response.csrftoken)
     }
