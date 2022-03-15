@@ -21,17 +21,25 @@ function AddAccountForm(props) {
             className="flex flex-col items-center bg-gray-200 dark:bg-gray-600 text-white dark:text-slate-200 shadow-lg p-4 rounded-md mt-4"
         >
             <h3 className="text-2xl mr-auto">Add Account</h3>
-            <div className="flex items-center mt-5">
-                <label className="px-2" htmlFor="name">
-                    Username
+            <div className="flex items-start flex-col mt-5">
+                <label className="px-2 py-1" htmlFor="name">
+                    Account Name
                 </label>
                 <input
                     className="rounded-md bg-gray-100 text-white dark:text-gray-800 px-3 "
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Mark Manson"
+                    placeholder="account name? what name?"
                 />
+            </div>
+            <div className="mt-5">
+                <button
+                    type="submit"
+                    className="rounded-md bg-gray-100 text-gray-800 dark:bg-gray-500 dark:text-slate-200 px-4 py-1"
+                >
+                    Submit
+                </button>
             </div>
         </form>
     )
@@ -77,7 +85,7 @@ function Accounts() {
     return (
         <>
             <Navbar />
-            <div className="main-color flex flex-col items-center bg-gray-100">
+            <div className="main-color flex flex-col items-center bg-gray-100 min-h-screen">
                 <div className="relative">
                     <div className="flex items-end justify-between">
                         <h1 className="text-4xl mt-2">Accounts</h1>
