@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
         }
         const response = await fetch('/api/v1/user/login', options)
         if (response.ok) {
-            const data = response.json()
+            const data = await response.json()
             setUser(data)
             setCsrfToken(data.csrftoken)
             callback()
