@@ -24,6 +24,7 @@ function MakeDebitCredit(props) {
                     name="isDebit"
                     id="isDebit"
                     className="hidden"
+                    checked={isDebit}
                 />
             </div>
             <div className="flex flex-col">
