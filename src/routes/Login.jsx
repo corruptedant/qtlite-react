@@ -32,12 +32,6 @@ function Login() {
         )
     }
 
-    useEffect(() => {
-        if (auth.user === null) {
-            auth.fetchUser()
-        }
-    })
-
     if (auth.user !== '') {
         return <Navigate to={from} replace />
         // navigate(from, { replace: true })
