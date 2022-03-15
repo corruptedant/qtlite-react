@@ -5,8 +5,8 @@ function Info() {
     return (
         <>
             <Navbar />
-            <div className="main-color flex flex-col items-center justify-center pt-2">
-                <div className="w-96">
+            <div className="main-color flex flex-col items-center justify-center pt-2 min-h-screen">
+                <div className="w-6/12 md:w-5/12 lg:w-7/12">
                     <img src={quicktrack} className="w-40 h-40" alt="" />
                     <h2 className="text-4xl">Quicktrack Lite</h2>
                     <h3 className="text-2xl text-gray-500">
