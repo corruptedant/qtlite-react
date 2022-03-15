@@ -1,4 +1,4 @@
-import quicktrack from '../icons/quicktrack.svg'
+import qtlite from '../icons/qtlite.svg'
 import { useAuth } from '../hooks/useAuth'
 import { useEffect, useState } from 'react'
 
@@ -43,7 +43,7 @@ function Login() {
                     onSubmit={handleSubmit}
                     className="grid place-items-center bg-gray-200 dark:bg-gray-500 w-96 mx-auto mt-40 p-12 rounded-md shadow-sm shadow-gray-400"
                 >
-                    <img className="w-20 h-20" src={quicktrack} alt="" />
+                    <img className="w-20 h-20" src={qtlite} alt="" />
                     <h2 className="text-2xl">Login</h2>
                     <div className="grid pt-2">
                         <p className="text-red-700 font-bold">{error}</p>

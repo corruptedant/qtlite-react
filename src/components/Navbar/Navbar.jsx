@@ -7,7 +7,7 @@ import {
     SunIcon,
 } from '@heroicons/react/outline'
 import { UsersIcon } from '@heroicons/react/solid'
-import quicktrack from '../../icons/quicktrack.svg'
+import qtlite from '../../icons/qtlite.svg'
 import NavIcon from './NavIcon'
 
 import { Link, useNavigate, Navigate } from 'react-router-dom'
@@ -50,7 +50,7 @@ function Navbar() {
             </div>
             <div className="flex px-2 justify-between z-10">
                 <div className="inline-flex items-center flex-shrink-0 p-2">
-                    <img src={quicktrack} alt="" className="h-14 w-14" />
+                    <img src={qtlite} alt="" className="h-14 w-14" />
                     <h1 className="text-2xl pl-4 hidden">Quicktrack Lite</h1>
                 </div>
 

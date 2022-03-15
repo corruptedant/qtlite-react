@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar'
-import quicktrack from '../icons/quicktrack.svg'
+import qtlite from '../icons/qtlite.svg'
 
 function Info() {
     return (
@@ -7,7 +7,7 @@ function Info() {
             <Navbar />
             <div className="main-color flex flex-col items-center justify-center pt-2 min-h-screen">
                 <div className="w-6/12 md:w-5/12 lg:w-7/12">
-                    <img src={quicktrack} className="w-40 h-40" alt="" />
+                    <img src={qtlite} className="w-40 h-40" alt="" />
                     <h2 className="text-4xl">Quicktrack Lite</h2>
                     <h3 className="text-2xl text-gray-500">
                         Made with React, React Router and Tailwindcss.
