@@ -12,12 +12,5 @@ export function useAccounts() {
             })
     }
 
-    // fetches accounts if not initialized.
-    useEffect(() => {
-        if (state.accounts === null) {
-            fetchAccounts()
-        }
-    })
-
     return [state, dispatch]
 }
