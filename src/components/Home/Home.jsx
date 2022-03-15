@@ -59,7 +59,7 @@ function Home() {
     }
     return (
         <div className="main-color flex justify-center">
-            <div className="flex flex-col justify-start h-screen">
+            <div className="flex flex-col justify-start min-h-screen">
                 <MakeDebitCredit
                     accounts={state.accounts}
                     handleSubmit={handleSubmit}
