@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useContext } from 'react'
 import { AccountContext } from '../contexts/accounts'
 import DebitCreditTable from '../components/DebitCreditTable/DebitCreditTable'
+import BigNumber from 'bignumber.js'
 
 function AccountDetail() {
     let params = useParams()
@@ -34,7 +35,7 @@ function AccountDetail() {
                     <>
                         <h2 className="text-6xl">{currentAccount.name}</h2>
                         <h3 className="text-3xl pt-3">
-                            RM {currentAccount.amount}
+                            RM {BigNumber(currentAccount.amount).toFixed(4)}
                         </h3>
                         <DebitCreditTable account={currentAccount} />
                     </>

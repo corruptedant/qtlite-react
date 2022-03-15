@@ -7,6 +7,7 @@ import { useAuth } from '../../hooks/useAuth'
 import MakeDebitCredit from './MakeDebitCredit'
 
 import { destructureAxios } from '../../utils/utils'
+import BigNumber from 'bignumber.js'
 
 function Home() {
     const auth = useAuth()
@@ -44,8 +45,14 @@ function Home() {
             console.log({ account }, { accounts })
             if (isDebit) {
                 account['debits'] = [...account.debits, res.data]
+                account['amount'] = BigNumber(account['amount']).plus(
+                    res.data.debit
+                )
             } else {
                 account['credits'] = [...account.credits, res.data]
+                account['amount'] = BigNumber(account['amount']).minus(
+                    res.data.credit
+                )
             }
             return dispatch({ type: 'setAccounts', payload: accounts })
         }

@@ -1,4 +1,4 @@
-import React from 'react'
+import BigNumber from 'bignumber.js'
 
 function AccountItem({ account }) {
     return (
@@ -6,7 +6,7 @@ function AccountItem({ account }) {
             <div className="flex items-center">
                 <h2 className="text-2xl">{account.name}</h2>
                 <p className="ml-auto text-gray-500 dark:text-slate-400">
-                    RM {account.amount}
+                    RM {BigNumber(account.amount).toFixed(4)}
                 </p>
             </div>
         </div>
