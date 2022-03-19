@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 
 import { useAuth } from '../hooks/useAuth'
 import { useDarkMode } from '../hooks/useDarkMode'
+import Loading from './Loading'
 
 function RequireAuth({ children }) {
     // useDarkMode has a useEffect that checks for the
@@ -29,7 +30,7 @@ function RequireAuth({ children }) {
         // anonymous(not logged in) has username of blank('')
         return children
     } else {
-        return <h1>Loading..</h1>
+        return <Loading />
     }
 }
 
