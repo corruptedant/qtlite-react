@@ -7,7 +7,7 @@ from .permissions import IsOwnerOrReadOnly
 
 from .serializers import AccountSerializer, CreditSerializer, DebitSerializer
 
-from .models import Account
+from .models import Account, Credit, Debit
 
 # Create your views here.
 class AccountsList(generics.ListCreateAPIView):
@@ -24,6 +24,20 @@ class DebitList(generics.CreateAPIView):
     serializer_class = DebitSerializer
     permission_classes = [IsAuthenticated]
 
+class DebitDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = DebitSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Debit.objects.filter(account__user=self.request.user)
+
 class CreditList(generics.CreateAPIView):
     serializer_class = CreditSerializer
     permission_classes = [IsAuthenticated]
+
+class CreditDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = CreditSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Credit.objects.filter(account__user=self.request.user)
