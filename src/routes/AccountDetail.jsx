@@ -31,7 +31,9 @@ function AccountDetail() {
                     <h2 className="text-2xl">Loading...</h2>
                 ) : (
                     <>
-                        <h2 className="text-6xl">{currentAccount.name}</h2>
+                        <h2 className="text-5xl lg:text-6xl">
+                            {currentAccount.name}
+                        </h2>
                         <h3 className="text-3xl pt-3">
                             RM {BigNumber(currentAccount.amount).toFixed(4)}
                         </h3>

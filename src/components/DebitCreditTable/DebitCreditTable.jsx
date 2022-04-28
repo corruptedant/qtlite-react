@@ -29,24 +29,28 @@ const generateTransactionTable = function (account) {
 }
 
 function DebitCreditTable({ account }) {
-    const transactions = generateTransactionTable(account)
+    const transactions = generateTransactionTable(account).reverse()
     return (
-        <table className="border-2-black">
-            <thead className="border-2-black">
-                <tr>
-                    <th className="border-2-black lg:px-6">Date</th>
-                    <th className="border-2-black lg:px-24">Details</th>
-                    <th className="border-2-black lg:px-6">Debit</th>
-                    <th className="border-2-black lg:px-6">Credit</th>
-                    <th className="border-2-black lg:px-6">Balance</th>
-                </tr>
-            </thead>
-            <tbody>
-                {transactions.map((tran) => (
-                    <TableItem key={tran.id} transaction={tran} />
-                ))}
-            </tbody>
-        </table>
+        <>
+            <form id="add_transaction"></form>
+            <table className="w-full md:w-7/12 lg:w-6/12">
+                <thead>
+                    <tr>
+                        <th
+                            colSpan={3}
+                            className="border-b border-gray-400 text-left pl-2 text-lg"
+                        >
+                            Transaction Details
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {transactions.map((tran) => (
+                        <TableItem key={tran.id} transaction={tran} />
+                    ))}
+                </tbody>
+            </table>
+        </>
     )
 }
 
