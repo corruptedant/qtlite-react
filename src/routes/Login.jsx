@@ -66,7 +66,13 @@ function Login() {
                             placeholder="Password"
                         />
                     </div>
-                    <button type="submit"></button>
+                    <div className="m-2">
+                        <input
+                            className="bg-gray-400 p-1 w-16 rounded-md cursor-pointer"
+                            type="submit"
+                            value="Login"
+                        />
+                    </div>
                 </form>
             </div>
         </div>
