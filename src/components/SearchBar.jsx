@@ -4,7 +4,7 @@ function SearchBar(props) {
             {/* <label htmlFor="searchAccount">Search</label> */}
             <input
                 onChange={props.handleChange}
-                className="bg-gray-100 dark:text-gray-800 p-2 rounded-2xl w-96"
+                className="bg-gray-100 dark:bg-gunmetal dark:text-slate-200 p-3 my-4 rounded-xl w-96"
                 type="text"
                 id="searchAccount"
                 placeholder="Search Account..."

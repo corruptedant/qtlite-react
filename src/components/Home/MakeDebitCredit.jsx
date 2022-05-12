@@ -6,14 +6,19 @@ function MakeDebitCredit(props) {
     return (
         <form
             onSubmit={props.handleSubmit}
-            className="mt-4 p-4 bg-gray-200 shadow-gray-300 dark:bg-gray-600 darkshadow-gray-400 text-black dark:text-slate-200 rounded-sm shadow-sm "
+            className="mt-4 p-4 bg-gray-200 shadow-gray-300 dark:bg-gunmetal dark:shadow-davys text-black dark:text-slate-200 rounded-sm shadow-sm "
         >
             <div className="flex items-center justify-between">
                 <h2 className="text-2xl">
                     Make {isDebit ? 'Debit' : 'Credit'}
                 </h2>
                 <label
-                    className="rounded-md p-2 bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-800 cursor-pointer"
+                    className={`${
+                        !isDebit
+                            ? 'bg-green-500 hover:bg-green-400 text-midnight'
+                            : 'bg-red-600 hover:bg-red-500 text-midnight'
+                    } 
+                    rounded-md p-2 bg-gray-400 cursor-pointer`}
                     htmlFor="isDebit"
                 >
                     Switch to {!isDebit ? 'Debit' : 'Credit'}
@@ -32,7 +37,7 @@ function MakeDebitCredit(props) {
                     <label htmlFor="account">Account</label>
 
                     <select
-                        className="ml-2 rounded-sm bg-gray-100 dark:bg-gray-700 p-1"
+                        className="ml-2 rounded-sm bg-gray-100 dark:bg-davys p-1"
                         name="account"
                         id="account"
                         required
@@ -53,7 +58,7 @@ function MakeDebitCredit(props) {
                         type="date"
                         name="date"
                         id="date"
-                        className="rounded-sm bg-gray-100 dark:bg-gray-700 ml-2 p-1"
+                        className="rounded-sm bg-gray-100 dark:bg-davys ml-2 p-1"
                         required
                     />
                 </div>
@@ -63,7 +68,7 @@ function MakeDebitCredit(props) {
                         type="text"
                         name="desc"
                         id="desc"
-                        className="rounded-sm bg-gray-100 dark:bg-gray-700 ml-2 p-1"
+                        className="rounded-sm bg-gray-100 dark:bg-davys ml-2 p-1"
                         required
                     />
                 </div>
@@ -74,13 +79,13 @@ function MakeDebitCredit(props) {
                         name="amount"
                         id="amount"
                         step="0.0001"
-                        className="rounded-sm bg-gray-100 dark:bg-gray-700 ml-2 p-1"
+                        className="rounded-sm bg-gray-100 dark:bg-davys ml-2 p-1"
                         required
                     />
                 </div>
                 <button
                     type="submit"
-                    className="p-2 rounded-md bg-gray-300 dark:bg-gray-700 mt-4"
+                    className="p-2 rounded-md bg-gray-300 dark:bg-keppel-500 text-midnight mt-4"
                 >
                     Submit
                 </button>

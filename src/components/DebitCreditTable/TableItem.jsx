@@ -101,9 +101,12 @@ function TableItem({ transaction }) {
             <td className="border-b border-gray-400 p-2 text-center">
                 <div className="flex justify-end align-center">
                     <div>RM {transaction.amount.toFixed(4)}</div>
-                    <div className="pl-2" title="Delete Transaction">
+                    <div
+                        className="flex items-center px-2 mx-3 text-midnight bg-red-600 hover:bg-red-400 rounded-md"
+                        title="Delete Transaction"
+                    >
                         <BackspaceIcon
-                            className="w-6 h-6 cursor-pointer"
+                            className="w-5 h-5 cursor-pointer"
                             onClick={() => deleteTransaction(transaction)}
                         />
                     </div>

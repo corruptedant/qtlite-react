@@ -18,7 +18,7 @@ function AddAccountForm(props) {
     return (
         <form
             onSubmit={props.handleSubmit}
-            className="flex flex-col items-center bg-gray-200 dark:bg-gray-600 text-white dark:text-slate-200 shadow-lg p-4 rounded-md mt-4"
+            className="flex flex-col items-center bg-gray-200 dark:bg-gunmetal text-white dark:text-slate-200 shadow-lg p-4 rounded-md mt-4"
         >
             <h3 className="text-2xl mr-auto">Add Account</h3>
             <div className="flex items-start flex-col mt-5">
@@ -26,17 +26,17 @@ function AddAccountForm(props) {
                     Account Name
                 </label>
                 <input
-                    className="rounded-md bg-gray-100 text-white dark:text-gray-800 px-3 "
+                    className="rounded-md p-1 bg-gray-100 text-white dark:text-slate-200 dark:bg-davys px-3 "
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="account name? what name?"
+                    placeholder="Jimmy Jim"
                 />
             </div>
             <div className="mt-5">
                 <button
                     type="submit"
-                    className="rounded-md bg-gray-100 text-gray-800 dark:bg-gray-500 dark:text-slate-200 px-4 py-1"
+                    className="rounded-md bg-gray-100 text-gray-800 dark:bg-keppel-500 dark:hover:bg-keppel-300 dark:text-midnight px-4 py-1"
                 >
                     Submit
                 </button>
@@ -91,7 +91,8 @@ function Accounts() {
                         <h1 className="text-4xl mt-2">Accounts</h1>
                         <div
                             onClick={setIsAddAccToggled}
-                            className="cursor-pointer p-1 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 hover:dark:bg-gray-700 rounded-xl"
+                            title="Add Account"
+                            className="cursor-pointer px-4 py-1 bg-gray-100 hover:bg-gray-200 dark:bg-[#43B9A2] text-midnight hover:dark:bg-[#55CBB5] rounded-xl"
                         >
                             <UserAddIcon className="w-8 h-8" />
                         </div>
