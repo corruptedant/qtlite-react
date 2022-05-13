@@ -41,7 +41,7 @@ function Login() {
             <div>
                 <form
                     onSubmit={handleSubmit}
-                    className="grid place-items-center bg-gray-200 dark:bg-gray-500 w-96 mx-auto mt-40 p-12 rounded-md shadow-sm shadow-gray-400"
+                    className="grid place-items-center bg-gray-200 dark:bg-gunmetal w-96 mx-auto mt-40 p-12 rounded-md shadow-sm shadow-davys"
                 >
                     <img className="w-20 h-20" src={qtlite} alt="" />
                     <h2 className="text-2xl">Login</h2>
@@ -49,7 +49,7 @@ function Login() {
                         <p className="text-red-700 font-bold">{error}</p>
                         <label htmlFor="username text-left">Username</label>
                         <input
-                            className="bg-gray-100 dark:text-gray-800 rounded-xl px-2 outline-none"
+                            className="bg-gray-100 dark:bg-davys dark:text-slate-200 rounded-xl px-2 outline-none"
                             type="text"
                             name="username"
                             id="username"
@@ -59,7 +59,7 @@ function Login() {
                     <div className="grid pt-2">
                         <label htmlFor="password">Password</label>
                         <input
-                            className="bg-gray-100 dark:text-gray-800  rounded-xl px-2 outline-none"
+                            className="bg-gray-100 dark:bg-davys dark:text-slate-200 rounded-xl px-2 outline-none"
                             type="password"
                             name="password"
                             id="password"
@@ -68,7 +68,7 @@ function Login() {
                     </div>
                     <div className="m-2">
                         <input
-                            className="bg-gray-400 p-1 w-16 rounded-md cursor-pointer"
+                            className="bg-keppel-500 hover:bg-keppel-300 text-gunmetal p-1 w-16 rounded-md cursor-pointer"
                             type="submit"
                             value="Login"
                         />

@@ -18,7 +18,7 @@ function MakeDebitCredit(props) {
                             ? 'bg-green-500 hover:bg-green-400 text-midnight'
                             : 'bg-red-600 hover:bg-red-500 text-midnight'
                     } 
-                    rounded-md p-2 bg-gray-400 cursor-pointer`}
+                    rounded-md p-2 cursor-pointer`}
                     htmlFor="isDebit"
                 >
                     Switch to {!isDebit ? 'Debit' : 'Credit'}
@@ -32,12 +32,11 @@ function MakeDebitCredit(props) {
                     checked={isDebit}
                 />
             </div>
-            <div className="flex flex-col">
-                <div className="flex items-center pt-2">
+            <div className="">
+                <div className="grid grid-cols-4 gap-3 pt-4 justify-items-start">
                     <label htmlFor="account">Account</label>
-
                     <select
-                        className="ml-2 rounded-sm bg-gray-100 dark:bg-davys p-1"
+                        className="col-span-3 ml-2 rounded-sm bg-gray-100 dark:bg-davys p-1"
                         name="account"
                         id="account"
                         required
@@ -51,45 +50,39 @@ function MakeDebitCredit(props) {
                             </option>
                         ))}
                     </select>
-                </div>
-                <div className="flex items-center pt-2">
                     <label htmlFor="date">Date</label>
                     <input
                         type="date"
                         name="date"
                         id="date"
-                        className="rounded-sm bg-gray-100 dark:bg-davys ml-2 p-1"
+                        className="rounded-sm col-span-3 bg-gray-100 dark:bg-davys ml-2 p-1"
                         required
                     />
-                </div>
-                <div className="flex items-center pt-2">
                     <label htmlFor="desc">Description</label>
                     <input
                         type="text"
                         name="desc"
                         id="desc"
-                        className="rounded-sm bg-gray-100 dark:bg-davys ml-2 p-1"
+                        className="rounded-sm col-span-3 bg-gray-100 dark:bg-davys ml-2 p-1"
                         required
                     />
-                </div>
-                <div className="flex items-center pt-2">
                     <label htmlFor="amount">Amount</label>
                     <input
                         type="number"
                         name="amount"
                         id="amount"
                         step="0.0001"
-                        className="rounded-sm bg-gray-100 dark:bg-davys ml-2 p-1"
+                        className="rounded-sm col-span-3 bg-gray-100 dark:bg-davys ml-2 p-1"
                         required
                     />
                 </div>
-                <button
-                    type="submit"
-                    className="p-2 rounded-md bg-gray-300 dark:bg-keppel-500 text-midnight mt-4"
-                >
-                    Submit
-                </button>
             </div>
+            <button
+                type="submit"
+                className="p-2 rounded-md bg-gray-300 dark:bg-keppel-500 text-midnight mt-4"
+            >
+                Submit
+            </button>
         </form>
     )
 }
