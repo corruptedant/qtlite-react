@@ -13,10 +13,11 @@ function Home() {
     const auth = useAuth()
     const [state, dispatch] = useContext(AccountContext)
 
-    const activeLoans = state.accounts.filter((acc) => acc.amount > 0)
+    const activeLoans = state.accounts.filter((acc) => acc.amount !== 0)
     const totalLoan = activeLoans
-        .map((acc) => parseInt(acc.amount))
-        .reduce((acc, curr) => acc + curr, 0)
+        .map((acc) => BigNumber(acc.amount))
+        .reduce((acc, curr) => BigNumber(acc).plus(BigNumber(curr)), 0)
+        .toFixed(4)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
